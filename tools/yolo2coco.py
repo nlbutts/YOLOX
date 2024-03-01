@@ -19,11 +19,20 @@ import json
 import os
 from PIL import Image
 import glob
-from pathlib import Path
+import argparse
+
+parser = argparse.ArgumentParser(
+                    prog='yolo2coco',
+                    description='Converts a yolo style images/labels to an annotation file')
+parser.add_argument('-i', '--input', type=str, required=True, help='Path to yolo directory')
+parser.add_argument('-o', '--output', type=str, required=True, help='Output directory for the annotation file')
+
+args = parser.parse_args()
+
 
 # Set the paths for the input and output directories
-input_dir = '/home/nlbutts/projects/YOLOX/Canola/Run_2'
-output_dir = '/home/nlbutts/projects/YOLOX/coco'
+input_dir = args.input
+output_dir = args.output
 if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 
