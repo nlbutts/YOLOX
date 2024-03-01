@@ -6,7 +6,7 @@ This doc introduces how to convert your onnx model to tflite and run inference.
 
 run the following command to install onnxruntime:
 ```shell
-pip install tflite-runtime tensorflow onnx opencv-python
+pip install tflite-runtime tensorflow tensorflow_probability onnx onnx_tf opencv-python
 ```
 
 I normally setup a virtualenv, install the YOLOX dependencies, then the above dependencies.
